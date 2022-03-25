@@ -1,10 +1,10 @@
 <!-- Botones -->
-<section id="actions" class="py-4 mb-4 bg-light">
+<section id="actions" class="py-4 mb-4">
   <div class="container">
     <div class="row">
       <div class="col-md-3">
-        <a href="#" class="btn btn-primary btn-block" data-bs-toggle="modal" data-bs-target="#agregarClienteModal">
-          <i class="fas fa-plus"></i>Agregar Cliente
+        <a href="#" class="btn btn-block btnGeneral"  data-bs-toggle="modal" data-bs-target="#agregarClienteModal">
+          <i class="fas fa-plus"></i> Agregar Cliente
         </a>
       </div>
     </div>
@@ -16,28 +16,28 @@
   <div class="container">
     <div class="row">
       <div class="col-md-9">
-        <div class="card">
-          <div class="card-header">
-            <h4>Listado de Clientes</h4>
-          </div>
-
-          <table class="table table-striped">
-            <thead class="thead-dark">
+        <div class="card cardClients">
+          <table class="table table-hover table-borderless text-center">
+            <thead class="table-head">
               <tr>
                 <th>#</th>
                 <th>Nombre</th>
+                <th>Apellido</th>
                 <th>Saldo</th>
+                <th>Mail</th>
                 <th></th>
               </tr>
-            </thead>
+
             <tbody>
               <tr *ngFor="let cliente of clientes; let i = index">
                 <td>{{i+1}}</td>
-                <td>{{cliente.nombre}} {{cliente.apellido}}</td>
+                <td>{{cliente.nombre}}</td>
+                <td>{{cliente.apellido}}</td>
                 <td>{{cliente.saldo | currency: 'MNX': '$'}}</td>
+                <td>{{cliente.email}}</td>
                 <td>
-                  <a routerLink="/cliente/editar/{{cliente.id}}" class="btn btn-secondary">
-                    <i class="fas fa-angle-double-right"></i>Editar
+                  <a routerLink="/cliente/editar/{{cliente.id}}" class="btn btnGeneral">
+                    <i class="fas fa-angle-double-right"></i> Editar
                   </a>
                 </td>
               </tr>
@@ -48,19 +48,19 @@
       <!--Tarjetas laterales-->
       <div class="col-md-3">
         <!--Saldo Total-->
-        <div class="card text-center bg-danger text-white mb-3">
+        <div class="card cardAside mb-3">
           <div class="card-body">
             <h3>Saldo Total</h3>
-            <h4 class="display-4">
+            <h4 class="display-6">
               {{getSaldoTotal() | currency:'MXN': '$'}}
             </h4>
           </div>
         </div>
         <!--Total Clientes-->
-        <div class="card text-center bg-success text-white mb-3">
+        <div class="card cardAside mb-3">
           <div class="card-body">
             <h3>Total Clientes</h3>
-            <h4 class="display-4">
+            <h4 class="display-6">
               <i class="fas fa-users"></i> {{clientes?.length}}
             </h4>
           </div>
@@ -73,20 +73,18 @@
 
 <!--Agregar cliente modal-->
 <div class="modal fade" id="agregarClienteModal">
-  <div class="modal-dialog modal-lg">
+  <div class="modal-dialog modal-md">
     <div class="modal-content">
-      <div class="modal-header bg-info text-white">
+      <div class="modal-header">
         <h5 class="modal-title">
           Agregar Cliente
         </h5>
-        <button class="btn-close" data-bs-dismiss="modal" #botonCerrar>
-          <span>&times;</span>
-        </button>
+        <button class="btn-close" data-bs-dismiss="modal" #botonCerrar></button>
       </div>
 
       <flash-messages></flash-messages>
 
-      <form #clienteFrom="ngForm" (submit)="agregar(clienteFrom)">
+      <form #clienteForm="ngForm" (submit)="agregar(clienteForm)">
         <div class="modal-body">
           <!--Nombre-->
           <div class="form-group">
@@ -148,7 +146,10 @@
         </div>
 
         <div class="modal-footer">
-          <button type="submit" class="btn btn-primary">Guardar</button>
+          <button type="submit" class="btn btnGeneral" data-bs-toggle="modal"
+          *ngIf="!nombre.errors && !apellido.errors && !email.errors">
+            Guardar
+          </button>
         </div>
       </form>
     </div>

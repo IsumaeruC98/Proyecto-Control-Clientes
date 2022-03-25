@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark p-0">
+<nav class="navbar navbar-expand-sm navbar-dark p-0">
   <div class="container">
     <a routerLink="/" class="navbar-brand">Control Clientes</a>
     <button
@@ -32,7 +32,7 @@
           </div>
         </li>
 
-        <li *ngIf="!isLoggedIn && permitirRegistro" class="nav-item">
+        <!-- <li *ngIf="!isLoggedIn && permitirRegistro" class="nav-item">
           <a routerLink="/login" class="nav-link" routerLinkActive="router-link-active">
             <i class="fas fa-user"></i> Login
           </a>
@@ -42,7 +42,7 @@
           <a routerLink="/registrarse" class="nav-link" routerLinkActive="router-link-active">
             <i class="fas fa-user"></i> Registro
           </a>
-        </li>
+        </li> -->
 
         <li *ngIf="isLoggedIn" class="nav-item">
           <a style="cursor: pointer" (click)="logOut()" class="nav-link">

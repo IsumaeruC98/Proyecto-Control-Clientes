@@ -9,7 +9,10 @@ import { ClienteServicio } from '../../servicios/cliente.service';
 @Component({
   selector: 'app-editar-cliente',
   templateUrl: './editar-cliente.component.html',
-  styleUrls: ['./editar-cliente.component.css']
+  styleUrls: [
+    './editar-cliente.component.css',
+    '../../app.component.css'
+  ]
 })
 export class EditarClienteComponent implements OnInit {
   cliente: Cliente = {
@@ -49,10 +52,8 @@ export class EditarClienteComponent implements OnInit {
   }
 
   eliminar() {
-    if(confirm("Seguro que desea eliminar el cliente?")) {
-      this.clientesServicio.eliminarCliente(this.cliente);
-      this.router.navigate(['/']);
-    }
+    this.clientesServicio.eliminarCliente(this.cliente);
+    this.router.navigate(['/']);
   }
 
 }

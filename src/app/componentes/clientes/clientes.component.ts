@@ -7,7 +7,10 @@ import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-clientes',
   templateUrl: './clientes.component.html',
-  styleUrls: ['./clientes.component.css']
+  styleUrls: [
+    './clientes.component.css',
+    '../../app.component.css'
+  ]
 })
 export class ClientesComponent implements OnInit {
   clientes: Cliente[];

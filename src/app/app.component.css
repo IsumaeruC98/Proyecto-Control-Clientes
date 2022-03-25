@@ -1,0 +1,164 @@
+/* Estilos Generales */
+body {
+  background: rgb(250, 250, 250) !important;
+}
+
+.navbar {
+  background: #001720;
+}
+
+.mainHeader {
+  background: rgb(41, 61, 71);
+  color: #fff;
+}
+
+/* Modal */
+.modal-content {
+  border-radius: 15px;
+}
+
+.modal-header, .modal-body, .modal-footer {
+  border: none;
+}
+
+.modal-header {
+  background: rgb(56, 71, 79);
+  color: #fff;
+  border-radius: 13px 13px 0 0;
+}
+
+/* Cards */
+.cardBorder {
+  border-radius: 15px;
+  box-shadow: 0 0 5px rgba(156, 156, 156, 9);
+}
+
+.card-header, .card-body, .card-footer {
+  background: none;
+  border: none;
+}
+
+.card-header {
+  padding: 0;
+  background: rgb(56, 71, 79);
+  color: #fff;
+  border-radius: 15px 15px 0 0;
+}
+
+/* BTN */
+.btn {
+  color: #fff;
+}
+
+.btnGeneral {
+  background: #747fc4;
+}
+
+.btnGeneral:hover {
+  background: #445393;
+}
+
+.btnSave {
+  background: #65ba69;
+}
+
+.btnDelete {
+  background: #ef534f;
+}
+
+.btnSave:hover {
+  background: #338a3e;
+}
+
+.btnDelete:hover {
+  background: #b61826;
+}
+
+.btnReturn {
+  color: #000;
+  border: solid 1px rgb(185, 185, 185);
+}
+
+.btnReturn:hover {
+  background: rgb(240, 240, 240);
+}
+
+/* Estilos Login Register */
+
+.btnBg {
+  width: 100%;
+  border-bottom: solid 1px rgb(185, 185, 185);
+}
+
+.btnOption1 {
+  width: 20%;
+  margin-left: 20%;
+  margin-bottom: -1px;
+  background: #fff;
+  color: #000;
+
+  border: solid 1px rgb(185, 185, 185);
+  border-bottom: solid 1px #fff;
+  border-radius: 10px 10px 0 0;
+}
+
+.btnOption2 {
+  width: 20%;
+  margin-left: 20%;
+
+  border: none;
+  border-radius: 10px 10px 0 0;
+}
+
+.btnOption1:hover {
+  background: rgb(230, 230, 230);
+}
+
+.btnOption2:hover {
+  background: rgb(46, 61, 69);
+}
+
+.email, .password {
+  border: none;
+  border-bottom: solid 1px rgb(185, 185, 185);
+
+  background:rgba(245, 245, 245, 7)
+}
+
+.email:hover, .password:hover {
+  background: rgba(220, 220, 220, 3);
+  border-bottom: solid 1px ;
+}
+
+.email:focus, .password:focus {
+  background: rgba(220, 220, 220, 3);;
+}
+
+
+/* Estilos Clientes */
+
+.cardClients {
+  background: none;
+  border: none;
+}
+
+.table {
+  background: #fff;
+  box-shadow: 0 0 5px rgba(156, 156, 156, 9);
+}
+
+.table-head {
+  background: rgb(56, 71, 79);
+  color: #fff;
+}
+
+th {
+  font-weight: normal;
+}
+
+.cardAside {
+  background: rgb(67, 75, 77);
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 0 7px rgba(156, 156, 156, 9);
+}

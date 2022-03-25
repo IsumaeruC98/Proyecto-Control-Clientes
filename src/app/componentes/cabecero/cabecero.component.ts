@@ -6,7 +6,10 @@ import { LoginService } from 'src/app/servicios/login.service';
 @Component({
   selector: 'app-cabecero',
   templateUrl: './cabecero.component.html',
-  styleUrls: ['./cabecero.component.css']
+  styleUrls: [
+    './cabecero.component.css',
+    '../../app.component.css'
+  ]
 })
 export class CabeceroComponent implements OnInit {
   isLoggedIn: boolean;

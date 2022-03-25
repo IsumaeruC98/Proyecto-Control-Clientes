@@ -6,7 +6,10 @@ import { ConfiguracionServicio } from 'src/app/servicios/configuracion.service';
 @Component({
   selector: 'app-configuracion',
   templateUrl: './configuracion.component.html',
-  styleUrls: ['./configuracion.component.css']
+  styleUrls: [
+    './configuracion.component.css',
+    '../../app.component.css'
+  ]
 })
 export class ConfiguracionComponent implements OnInit {
 
